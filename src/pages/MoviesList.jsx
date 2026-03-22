@@ -26,7 +26,7 @@ function MoviesList() {
         <h1>Lista completa dei film</h1>
 
         <div className="cards-container">
-            {movies.map((movie, idx) => <MovieCard key={idx} movie={movie} />)}
+            {movies.map((movie, id) => <MovieCard key={id} movie={movie} />)}
         </div>
         
     </>
