@@ -10,7 +10,7 @@ function MovieCard({movie}) {
             <h2>{title}</h2>
             <h3>{director}</h3>
             <p>{abstract}</p>
-            <Link to={`/movies/${id}`}>Vai alla pagina del film</Link>
+            <Link to={`/movies/${id}`}>Vai alla pagina di dettaglio film</Link>
         </div>
 
 };
