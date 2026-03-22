@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import MoviePageDetails from "./pages/MoviePageDetails";
 import DefaultLayout from "./layouts/DefaultLayout";
+import MoviesList from "./pages/MoviesList";
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
       <Routes>
         <Route Component={DefaultLayout}>
           <Route path="/" Component={HomePage}></Route>
+          <Route path="/movies" Component={MoviesList}></Route>
           <Route path="/movies/:id" Component={MoviePageDetails}></Route>
-          <Route path="/mo"></Route>
+          
         </Route>
       </Routes>
 
