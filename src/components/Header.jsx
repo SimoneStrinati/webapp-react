@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import style from "./Header.module.css";
 
 function Header() {
 
 
     return (
         <>
-            <header className="navbar">
+            <header className={style.header}>
                 <Link to="/">Home</Link>
                 <Link to="/movies">Lista Film</Link>
             </header>

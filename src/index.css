@@ -23,43 +23,5 @@ a:hover {
   color: #B23A3A;
 }
 
-.navbar {
-  background-color: #e0c9a6;
-  display: flex;
-  justify-content: end;
-  padding: 1rem;
-  gap: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(107, 44, 44, 0.12);
-}
 
-.navbar a {
-  color: #6B2C2C;
-  padding: 0.3em 0.8em;
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
-}
 
-.navbar a:hover,
-.navbar a.active {
-  background: #f3e3cf;
-  color: #B23A3A;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.card {
-  width: calc((100% - 2em) / 3);
-  background-color: #e6ddce;
-  border: 1px solid #e0c9a6;
-  border-radius: 5px;
-}
-
-.card img {
-  width: 100%;
-}

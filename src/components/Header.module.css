@@ -1,0 +1,22 @@
+.header {
+  background-color: #e0c9a6;
+  display: flex;
+  justify-content: end;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(107, 44, 44, 0.12);
+}
+
+.header a {
+  color: #6B2C2C;
+  padding: 0.3em 0.8em;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.header a:hover,
+.header a.active {
+  background: #f3e3cf;
+  color: #B23A3A;
+}

@@ -1,0 +1,17 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  width: calc((100% - 2em) / 3);
+  background-color: #e6ddce;
+  border: 1px solid #e0c9a6;
+  border-radius: 5px;
+}
+
+.card img {
+  width: 100%;
+}

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import style from "./MovieCard.module.css";
 
 function MovieCard({movie}) {
 
     const { id, title, director, abstract, image } = movie;
 
-    return <div className="card">
+    return <div className={style.card}>
             <img src={image} alt={title}/>
             <h2>{title}</h2>
             <h3>{director}</h3>
