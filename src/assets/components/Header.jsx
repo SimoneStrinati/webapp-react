@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Header() {
 
 
     return (
         <>
-            <header>
-                Qui va l'header
+            <header className="navbar">
+                <Link to="/">Home</Link>
+                <Link to="/movies">Lista Film</Link>
             </header>
         </>
     )
