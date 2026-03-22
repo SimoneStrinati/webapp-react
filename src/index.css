@@ -23,5 +23,11 @@ a:hover {
   color: #B23A3A;
 }
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
 
 

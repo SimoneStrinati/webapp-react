@@ -11,12 +11,22 @@ function MoviesList() {
         image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg"
     }
 
+
+    const movies = [
+        movieplaceholder,
+        movieplaceholder,
+        movieplaceholder,
+        movieplaceholder
+
+    ]
+        
+
     return <>
 
         <h1>Lista completa dei film</h1>
 
         <div className="cards-container">
-            <MovieCard movie={movieplaceholder} />
+            {movies.map((movie, idx) => <MovieCard key={idx} movie={movie} />)}
         </div>
         
     </>
