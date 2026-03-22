@@ -5,9 +5,9 @@ function MoviesList() {
 
     const movieplaceholder = {
         id: 1,
-        title: "Titolo del film 1",
+        title: "Titolo del film",
         director: "Regista",
-        abstract: "Descrizione del film 1",
+        abstract: "Descrizione del film",
         image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg"
     }
 
