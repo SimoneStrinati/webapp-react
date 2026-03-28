@@ -5,8 +5,11 @@ function MovieCard({movie}) {
 
     const { id, title, director, abstract, image } = movie;
 
+    const apiUrl = "http://localhost:3000/static/movies_cover";
+
+
     return <div className={style.card}>
-            <img src={image} alt={title}/>
+            <img src={`${apiUrl}/${image}`} alt={title} />
             <h2>{title}</h2>
             <h3>{director}</h3>
             <p>{abstract}</p>

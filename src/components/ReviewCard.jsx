@@ -6,7 +6,6 @@ function ReviewCard({review}) {
     const { id, name, vote, text, image } = review;
 
     return <div className={style.card}>
-            <img src={image} />
             <h2>{name}</h2>
             <h3>Valutazione: {vote}/10</h3>
             <p>{text}</p>
@@ -14,8 +13,5 @@ function ReviewCard({review}) {
             <Link to={`/movies`}>Torna alla lista dei film</Link>
         </div>
 
-        
-
 };
-
 export default ReviewCard;
