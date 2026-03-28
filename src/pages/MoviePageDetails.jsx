@@ -1,20 +1,37 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";   
 import ReviewCard from "../components/ReviewCard";
 
 function MoviePageDetails(){
 
-    const reviewPlaceholder = {
-        id: 1,
-        name: "Nome dell'utente",
-        vote: 8,
-        text: "Recensione del film",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg"
-    }
+    const { id } = useParams();
+
+    const [movie, setMovie] = useState({
+        name:"",
+        text:"",
+        vote:"",
+        reviews:[]
+    });
+
+    useEffect(() => {
+
+        axios.get(`http://localhost:3000/api/movies/${id}`).then(res => {
+            console.log(res.data);
+            setMovie(res.data);
+        }).catch(err => console.error("Errore durante il recupero dei film:", err.message));
+    }, [id]);
 
     return <>
 
         <h1>Pagina di dettaglio del film</h1>
 
-        <ReviewCard review={reviewPlaceholder} />
+        <h2>{movie.name}</h2>
+        <p>{movie.text}</p>
+
+        <div className="cards-container">
+            {movie.reviews.map((review, id) => <ReviewCard key={id} review={review} />)}
+        </div>
 
     </>
 
