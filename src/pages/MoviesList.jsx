@@ -1,25 +1,19 @@
+import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
+
+import axios from "axios";
 
 function MoviesList() {
 
+    const [movies, setMovies] = useState([])
 
-    const movieplaceholder = {
-        id: 1,
-        title: "Titolo del film",
-        director: "Regista",
-        abstract: "Descrizione del film",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg"
-    }
+    useEffect(() => {
 
-
-    const movies = [
-        movieplaceholder,
-        movieplaceholder,
-        movieplaceholder,
-        movieplaceholder
-
-    ]
-        
+        axios.get("http://localhost:3000/api/movies").then(res => {
+            console.log(res.data);
+            setMovies(res.data);
+        }).catch(err => console.error("Errore durante il recupero dei film:", err.message));
+    }, []);
 
     return <>
 
@@ -28,7 +22,7 @@ function MoviesList() {
         <div className="cards-container">
             {movies.map((movie, id) => <MovieCard key={id} movie={movie} />)}
         </div>
-        
+
     </>
 
 };

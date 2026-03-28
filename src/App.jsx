@@ -9,7 +9,7 @@ import MoviesList from "./pages/MoviesList";
 
 
 function App() {
-  // const [stato, setStato] = useState(null)
+  
 
   return (
     <BrowserRouter>
