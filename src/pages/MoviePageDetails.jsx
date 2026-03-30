@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";   
+import { useParams } from "react-router-dom"; 
+
 import ReviewCard from "../components/ReviewCard";
+import ReviewForm from "../components/ReviewForm";
 
 function MoviePageDetails(){
 
@@ -29,6 +31,8 @@ function MoviePageDetails(){
         <div className="cards-container">
             {movie.reviews.map((review, id) => <ReviewCard key={id} review={review} />)}
         </div>
+
+        <ReviewForm movieId={movie.id} />
 
     </>
 
