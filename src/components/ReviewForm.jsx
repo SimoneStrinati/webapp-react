@@ -1,33 +1,33 @@
 import axios from "axios";
 import { useState } from "react";
 
-const ReviewForm = ( props ) => {
+const ReviewForm = (props) => {
 
     const movieId = props.movieId;
     const apiUrl = `http://localhost:3000/api/movies/${movieId}/review`;
+    const initialFormData = {
+        name: "",
+        vote: "",
+        text: ""
+    };
+
+    const [formData, setFormData] = useState({ initialFormData });
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (isNaN(formData.vote)|| formData.vote < 1 || formData.vote > 5) {
+        if (isNaN(formData.vote) || formData.vote < 1 || formData.vote > 5) {
             alert("La valutazione deve essere un numero compreso tra 1 e 5");
             return;
         };
-        
-        console.log("Form inviato!", movieId, formData, apiUrl);
 
         axios.post(apiUrl, formData).then(res => {
             console.log("Recensione inviata con successo!", res.data);
+            setFormData({ initialFormData });
         }).catch(err => {
             console.error("Errore durante l'invio della recensione:", err.message);
         });
     };
-
-    const [formData, setFormData] = useState({
-        name: "",
-        vote: "",
-        text: ""
-    });
 
     function setNewValue(e) {
 
