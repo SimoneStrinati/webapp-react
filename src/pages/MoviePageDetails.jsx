@@ -24,10 +24,7 @@ function MoviePageDetails(){
 
     return <>
 
-        <h1>Pagina di dettaglio del film</h1>
-
-        <h2>{movie.name}</h2>
-        <p>{movie.text}</p>
+        <h1>{movie.title}</h1>
 
         <div className="cards-container">
             {movie.reviews.map((review, id) => <ReviewCard key={id} review={review} />)}

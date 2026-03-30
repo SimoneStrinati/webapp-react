@@ -7,7 +7,7 @@ function ReviewCard({review}) {
 
     return <div className={style.card}>
             <h2>{name}</h2>
-            <h3>Valutazione: {vote}/10</h3>
+            <h3>Valutazione: {vote}/5</h3>
             <p>{text}</p>
 
             <Link to={`/movies`}>Torna alla lista dei film</Link>
