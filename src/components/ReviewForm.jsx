@@ -4,6 +4,7 @@ import { useState } from "react";
 const ReviewForm = (props) => {
 
     const movieId = props.movieId;
+    const reloadReviews = props.onCallBack;
     const apiUrl = `http://localhost:3000/api/movies/${movieId}/review`;
     const initialFormData = {
         name: "",
@@ -11,7 +12,7 @@ const ReviewForm = (props) => {
         text: ""
     };
 
-    const [formData, setFormData] = useState({ initialFormData });
+    const [formData, setFormData] = useState( initialFormData );
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -24,6 +25,7 @@ const ReviewForm = (props) => {
         axios.post(apiUrl, formData).then(res => {
             console.log("Recensione inviata con successo!", res.data);
             setFormData({ initialFormData });
+            reloadReviews();
         }).catch(err => {
             console.error("Errore durante l'invio della recensione:", err.message);
         });

@@ -16,13 +16,15 @@ function MoviePageDetails(){
         reviews:[]
     });
 
-    useEffect(() => {
-
+    function reloadReviews() {
         axios.get(`http://localhost:3000/api/movies/${id}`).then(res => {
             console.log(res.data);
             setMovie(res.data);
         }).catch(err => console.error("Errore durante il recupero dei film:", err.message));
-    }, [id]);
+
+    }
+
+    useEffect(() => {reloadReviews()}, [id]);
 
     return <>
 
@@ -32,7 +34,7 @@ function MoviePageDetails(){
             {movie.reviews.map((review, id) => <ReviewCard key={id} review={review} />)}
         </div>
 
-        <ReviewForm movieId={movie.id} />
+        <ReviewForm movieId={movie.id} onCallBack={reloadReviews} />
 
     </>
 
